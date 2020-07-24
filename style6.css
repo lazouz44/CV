@@ -3,132 +3,94 @@
 /*definition de la police*/
 
 font-face {
-    font-family: 'ambleregular';
-    src: url('Amble-Regular-webfont.eot');
-    src: url('Amble-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Amble-Regular-webfont.woff2') format('woff2'),
-         url('Amble-Regular-webfont.woff') format('woff'),
-         url('Amble-Regular-webfont.ttf') format('truetype'),
-         url('Amble-Regular-webfont.svg#ambleregular') format('svg');
+    font-family: 'robotoregular';
+    src: url('Roboto-Regular-webfont.eot');
+    src: url('Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Roboto-Regular-webfont.woff2') format('woff2'),
+         url('Roboto-Regular-webfont.woff') format('woff'),
+         url('Roboto-Regular-webfont.ttf') format('truetype'),
+         url('Roboto-Regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
+
+
+
+
+
 /*ELEMENTS PRINCIPAUX*/
 
-body
+body                                                          
 {
 	
-	font-family:amble,arial,trebuchet
+	font-family: 'robotoregular';
+  max-width: 900px;
+  margin: auto;
+  border-right: 1px solid rgb(92,138,77);
+  border-left: 1px solid rgb(92,138,77);
+
 	
 
 }
 
 
+section,aside   /* je considere que ma section se compose dun article avec 
+                                     3 parties form exp et recom , un aside en 3 parties*/
 
-
-
-
-
-
-#bloc_page
-      {                     /* MISE EN PAGEmettre les bonnes dimensions par rapport a la maquette?e meme pour
-      	                        les couleurs *//*TEST AVEC NEW PIXEL SA DEROULE TITRE EN HAUT*/
-
-width: 1184px;
-height: 1684px;
+{
+  text-align: justify;
 }
 
 
 
 
 
-/*new  query test*/
-@media all and (max_widht: px)
+.bloc_page
+      {            
+           display: flex;
+         /* align-items: stretch;*/
 
-{
-   #bloc_page
-  {
-  	width: auto;
-  	
-  	}
 
 }
 
 
 
 
-
-
-
-
-
-/* header*/
-
-/*etat des lieux du 10/07
-  - nouveau truc chelou : quand je rétécie ma fenetre le header 
-  s'en va tranquilment sous laside 
-  - elsa toujours accolé a de fursac
-  - H2 pas direct sous le titre H1 
-  -la pb t'ou d'un coup mon titre change de postion!!!est partit
-   sous l'aside  jai mi une margin left pour le h1 pour le retrouver
-   le h2 a disparu certainement sous l'aside 
-   - pour l'aside les paragraphe pas a la bonne place
-   - la partie a propos doit etre 2 fois plus grosse que contact
-   -la partie logo est trop grande
-   -pour l'article les titres entreprises devraient commencer au niveau du N
-   de formation , jarrive pas à les décaler
-   -de meme pour les paragraphes .*/
-
-
-
-   
-
-
-header          /*jenarrive pas a deplacer mon h2*/
-
-{
-display: flex;
-max-width: 801px;
-max-height: 365px;
-
-flex-direction: column;
-  justify-content: center; 
-  align-items: flex-end;
-  line-height: 3.5%; 
-               /* JAI REUSSI A RESSERRER MES TITRES AVEC LINE HEIGHT*/
 
                   
+/*body*/
 
-}
+/*section*/
 
 
-
-#letitreprincipal    /* pb tout s'est décalé je ne sais pas pkoi*/
+.letitreprincipal    
 
 {                             
-display: flex;                                  /*alignement ok mais elsade pas elsa de*/
 
-justify-content: space-between;
 
+padding-left: 30px;
+padding-top: 60px;
+  line-height: 3%;
 
 }
 
 
-header h1    
+h1    
 
  {
- 	display: flex;
- 	                                         /*jai reussi a l'aligner en rajoutant flex! elsa accolé: 2 div*/
-justify-content: center;                 
+
+
+
+ display: flex;
+ 	                
 font-family:trebuchet,arial;
 font-size: 2.5em;
 
 font-weight: normal;
 color: rgb(1,14,5);
-margin-top: 200px; 
-margin-left: 190px;         /* quand je change la margin top de header larticle descend*/
+         /* quand je change la margin top de header larticle descend*/
 
 
 
@@ -136,42 +98,17 @@ margin-left: 190px;         /* quand je change la margin top de header larticle 
 
 
 
-
-
- header h2               /* A DISPARU CE CON*//*je dois peut etre creer une div pour h2*/
- {
- 	display: flex;
- 	
-  justify-content: center;
-
-                            /*ux quil soit juste en dessous... margin top marche pas*/
- 	                                   /*creer une position relative et absolue entre les 2 titres?*/
-font-family: arial;                                     /*line heigth? A DISPARU*/
-font-size: 1em
-
-
-margin-left:190px;
-
-
-font-weight: normal;
-color:rgb(62,60,68);
-
- }
-
-
-
-
- .prenom   /* 2 div dans le titre , accolé.. peut etre utiliser span plutot qyun div*/
+ .prenom   
  {
   display: flex;
-color: rgb(24,193,131); /* test avec span pas de changement cest bizareee*/
-margin-right: 13px;
+color: rgb(92,138,77); 
+margin-right: 10px;
 
  }
 
 .dev
 {
- border-bottom: 3px rgb(24,193,131) solid;
+ border-bottom: 1px rgb(92,138,77) solid;
 
 }
 
@@ -179,240 +116,191 @@ margin-right: 13px;
 
 
 
-
- /*/header*/
-
-/*BODY*/
-
-.fas fa-graduation-cap    /*icones titres */
+.titreimage i   /*icones titres */
 
 {
 
-color: rgb(24,193,131);
+color: rgb(92,138,77);
  
 
 
 }
 
-.fas fa-pencil-alt
-{
-
-
-
-}
-.fas fa-briefcase
-{
-
-
-}
-
-
-
-
-
-section
-{
-	display: flex;
-	                        /*peut etre ici pour que mon aside aille jusquen ht?*/
-	
-  justify-content: flex-start;
-    
-    
-
-    }
-
-
-
-
-/* jai enlevé le row reverse et mis flex start ca fonctionne*/
-
-
-
-
-                                      /* yes jai reussi avec row reverse a mettre mon aside a gauche
- je me demande si c pas ici que je dois faire un truc pour que mon aside ne morde
- pas sur mon article........a moins que le pb sois mon article ..on dirait quil nest plus
- positionné par rapport a laside ...margin left?  oui ok*/
-
-
-
-
-
-
-
-
-
-article, aside   /* je considere que ma section se compose dun article avec 
-                                     3 parties form exp et recom , un aside en 3 parties*/
-
-{
-	text-align: justify;
-}
-
-
-
-
-
-
-
-
-
-/* new query test*/                                
-
-@media all and (max_widht: px)
-
-
-  
-  {
-
-article, aside
-{
-  width: auto;
-  margin-bottom: 
-}
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-article                                   
-                                                           
-{
-	
-	
-    min-width: 801px;        /* avt width  600px et margin auto*/
-    max-height: 1313px;
-	
-	margin-left: 250px; /* ==>larticle nest plus sous aside sauf pour exp et recommandation!*/
-	flex-direction: column;
-	justify-content: space-between;
-
-
-	
-
-	}
 
 
 
 .icondot
 {
+/*display: inline-block;*/
+color: rgb(92,138,77);
 
-color: rgb(24,193,131);
-margin-right: 5px; 
-font-size: 8px;
+font-size: 11px;
+
+padding-left: 60px;
+padding-top: 10px;
 }
 
 .iconcircle
 
 {
  
-color: rgb(24,193,131);
-margin-right: px; 
-font-size: 8px;
+color: rgb(92,138,77);
+padding-left: 60px; 
+padding-top: 10px;
+font-size: 6px;
 }
 
 
-     .reverse       /* hop je change lordre avec openc en 1er hihi*/
-     {
-         display: flex;
-         flex-direction: column-reverse;
-
-     }                   
+           
 
 
-
-.titarticle
+.blocArticle
 {
-margin-left: 150px;
-margin-top: 100px;
-margin-bottom: 50px;
-display: flex;
-flex-direction: center;
-border-bottom: 3px rgb(24,193,131) solid;
-  /* soucis ca prend tte la longueur*/
-
-}
 
 
-
-.titreentreprise  /* je souhaite que le titre et le texte aille a coté:!*/
-{                    /*c ok mais c le bordel*/
-
-display: flex;
-flex-direction: column;
-
-justify-content: center;
-align-items: center; 
-
-                          /* test  rajout*//*jenleve pour voir si c ca le pb*/
-color:rgb(62,60,68);
-font-weight: bold;
+margin-right: 50px;
 
 
 
 }
 
-.datetitre
+.ensemble1            
 {
-display: flex;                     /*la date et le titre sont alignés flex :row auto le point a disparu*/
-flex-direction: column;            /* les voilà décalés , now le paragraphe doit suivre le titre*/
-justify-content: flex-start;
-line-height: 1px; 
-margin-left: 100px;
+display: flex;
+
+
+
+
+}
+
+.form1       
+
+
+{
+/*display: block;                                        
+flex-direction: column;*/
+margin-bottom: 20px;
+
+
+}
+
+
+
+
+.titarticle   /* h3*/
+{
+margin-left: 30px;       
+margin-top: 80px;
+
+/*display: flex;*/
+font-size: 1.3em;
+padding: 0 0 8px 15px;
+text-transform: uppercase;
+
+border-bottom: 1.5px rgb(92,138,77) solid;
+  
+
+}
+
+.titarticle2   /* h3*/
+{
+margin-left: 30px;       
+margin-top: 2px;
+
+display: flex;
+font-size: 1.3em;
+padding: 0 0 8px 15px;
+text-transform: uppercase;
+
+border-bottom: 1.5px rgb(92,138,77) solid;
+
+
+
+}
+
+.datearticle 
+{
+                   
+/*flex-direction: column;*/            
+
+min-width: 180px;
+
+margin-top: 3px;
+padding-top: 3px;
+
  
 color:rgb(62,60,68);
 font-weight: bold;
+padding-left: 10px;
+
+}
+.pointdate
+
+{
+display: flex;
+
 
 }
 
-        
+.titreentreprise     /* h4*/    
+{                    
+/*display: flex;
+flex-direction: column;*/
+margin-bottom: 0px;
+text-transform: uppercase;
+margin-top: 3px;
+padding-top: 3px;
+                  
+color:rgb(62,60,68);
 
-.para                      /*est ce que je creeererai pas une seule et même entité?
-                               que mon titre et le paragraphe appartiennent a la même div
-                                 comme ça hop le paraf suit */
+}
+
+
+
+.para                      
+                              
 {
 
-	display: flex;              /*alélouia ! jai reussi a faire en sorte que le paraf
-	                                aille sous le titre en lalignent à la fin sur laxe secondaire */
-	flex-direction: column;
+ /* display: block;  */ 
+ /* padding-left: 0px; */          
+                                  
+  /*flex-direction: column;*/
   color:rgb(62,60,68);
 
-	justify-content: ;  /* test*/
-	align-items: flex-start;  
-	
+   
+ /* align-items: center;  */
+  
 
   }
 
 
 
-.form1       /* contient titentreprise sous titre et para*/
 
+.date
 
 {
-display: flex;
-flex-direction: column;
+list-style: none;
 
-align-items: baseline;
+
+}
+        
+.lieux
+{
+list-style: none;
 
 
 
 }
 
-.ensemble1            /*contient datetitre titrentreprise ss titre para*/
-{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+  .ul
 
-}
+  {
+
+    list-style: none;
+    /*display: block;*/
+    padding-left: 0px;
+  }
+
 
 
 
@@ -421,18 +309,21 @@ justify-content: space-between;
 {
 
 display: flex;
-flex-direction: row;
-justify-content: space-between;
+
+
+justify-content: space-around;
+
+
 
 }
 
 .recommand
 {
 
-  display: flex;
-  margin-left: 100px;
-  flex-direction: column;
-  justify-content: flex-start;
+  
+  padding-bottom: 5px;
+  /*flex-direction: column; */
+  
 }
 
 
@@ -440,8 +331,8 @@ justify-content: space-between;
 
 {
 
-float: right;
 
+padding-bottom: 5px;
 
 }
 
@@ -450,103 +341,52 @@ float: right;
 
 {
 color:rgb(62,60,68);
+line-height: 0px;
 
+
+
+}
+.contactR
+{
+
+line-height: 0px;
 
 }
 
 
-.profil   /*correspond au profil de la recommandation*/
+
+
+
+
+
+aside                                      
+{
+	   
+  
+  
+  width: 33%;
+
+  background-color: rgb(92,138,77);                            
+  font-size: 1em;
+                
+}
+
+.logo
 
 {
 
-
-
-
-}
-
-
-
-
-
-
-aside                                      /* pb de dimension de page*//*dois je creer un liseret?*/
-{
-	display: flex;                          /*ou je fais en sorte que mon aside aille jusquen haut*/
-	flex-direction: column; 
-	justify-content: space-between;
-
-position: absolute;
-                   /* je tente cette position = en haut a gauche mais recouvre tout
-                                       cache mes dates et le reste de la'article va en dessous */
-background-color: rgb(24,193,131);
-top:0px;                             
-                                  /*je tente avec bottom 0 p fixed et top o le truc c quavec fixed le reste deroule,
-                                 jenleve*//*avec height 100 prct ce se retrecit!*/
-                      /*avec top px ca reste en haut*/
-
-font-size: 0.9em;
-max-width: 383px;   
-min-height: 1684px;      
-                     
-
+text-align: center;
+padding-top: 40px;
+padding-bottom: 20px;
 
 }
 
-
-
-
-                      /*avant width 200 */
- 
-
-
-                    /* je souhaite que ca mon jusqu'en haut! là fonctionne avec la section 
-                    donc sarrete comme larticle , je veux que ca aille jusqu'au header.... position ?
-
-
-                   avec le min height cest bon prend toute la hauteur mais recouvre
-                    mon article ==<ok article décale avec margin left*/
- 
-/* contact + petit qua propos de moi , utiliser flex grow?*/
-
-
-
-
-
-
-
-
-
-
-#logo                      /*il faut que mon image aille au niveau de laside , e haut a gauche*/
-{ 
-	display: flex;
-	
-
- }
-
-
-
-
-
-
-
-
-#logo img    
+.logo img    
  {
- 	width: 200px;     /*avant 99  100px */
- 	height: 200px;
- 	border-radius: 100px;  /* youpi cest arrondie !!*/  /* avt avec 50px*/
- 	box-shadow: /* a rajouter quand on sera sur le vert*/
-    margin-top: 100px;
-    margin-left: 85px;
-    position: absolute; 
-                           /*ajout posit absolue ; ça remonte header et article trop haut*/
-
-
- 	                     /*creer une margin top  =qiuand je la creer lensemble descend 
- 	                     sauf la photo qui reste en haut*/
-
-
+ 
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px rgb(62,60,68);
+     
  	}
 
 
@@ -557,7 +397,8 @@ min-height: 1684px;
 display: flex;
 justify-content: space-around;
 font-size: 40px;
-
+padding-top: 30px;
+padding-bottom: 30px;
 
 
 }
@@ -566,104 +407,407 @@ font-size: 40px;
 
 
 
-.titaside   /* encadré avec fond plein noir en mettant un background  et couleur verte au texte*/
+.titaside   
 {
 
-	display: flex;
-	flex-direction: column;
+	
 	text-align: center;
-	color:rgb(24,193,131);
-	  
-	
-	margin-top: 0px;
-	border: 8px rgb(62,60,68) solid;
-	background: rgb(62,60,68);
-	
+	color:rgb(92,138,77);
+  font-size: 1.3em;
+  text-transform: uppercase;
+  padding: 5px;
+  letter-spacing: .4px;
+	 background: rgb(62,60,68);
+
 
 }
 
 
-.parafasidemid      
+
+
+.asideapropos
 {
-display: flex;  
-flex-direction: column;
-justify-content: flex-start;
-                            
-padding-top:5px;               
+/*flex-grow: 3;*/
+    
+}
+
+.parafasidemid        
+{
+
+
+text-align: justify;
+padding-top:20px;
+padding-right: 20px;
+ padding-bottom: 685px;
+ padding-left: 20px;               
 color: rgb(62,60,68);
-margin-top: 0px;
-margin-left: 25px;
-margin-right: 25px;
-flex: ; /* faudra faire un flex 2 quand mise en page ok*/
+
+
+
 
 
 }
+
 
 
 .parafaside
 
 {
-              /* ni text align ni align items ne fonctionne*/ 
-display: flex;  
-flex-direction: column;
+              
 
-                            /*jajoute un display pour bouger le texte du paraF*/
-padding-top:5px;               
+
+
+                            
+padding-top:20px; 
+padding-left: 0px;              
 color: rgb(62,60,68);
-margin-top: 0px;
-margin-left: 25px;
 
 }
 
 
-#parafaside /* correspond au paraf contact avec saut de ligne*/
-
+.asideloisir
 {
- 
-display: flex; 
- 
-flex-direction: column;
-justify-content: flex-start;
-
-                
-padding-top:px;               
-color: rgb(62,60,68);
-margin-top: px;
-margin-left: 45px;
-
-
 
 
 }
 
-.add         /* alors là je ne sais plus pourquoi j'ai créee ça mais ca parait bien géré par#parafaside*/
+
+.add         
 {
-margin-top: 0px;
-margin-left:px;
 
-
+list-style: none;
+padding-left: 20px;
 }
 
 .tel
 {
-margin-top: 0px;
-margin-left:px;
+list-style: none;
+padding-left: 20px;
 
 }
 
 .site
 {
-margin-top: 0px;
-margin-left:px;
+list-style: none;
+padding-left: 20px;
 
 }
 
 .skype
 {
-margin-top: 0px;
-margin-left:px;
+list-style: none;
+padding-left: 20px;
 
 }
+
+
+
+
+
+/* new query test*/                                
+
+@media all and (max-width: 1024px) and (min-width: 841px)
+
+  {
+
+
+
+
+h1
+{
+display: flex;
+  justify-content: center;
+}
+
+
+.letitreprincipal
+{
+text-align: center;
+
+}
+  
+
+.bloc_page
+  {
+    width: auto;
+    margin:auto;
+    /*display: flex;*/
+    flex-direction: column-reverse;
+    
+}
+
+aside
+{
+
+  width: auto;
+  margin: auto;
+  
+}
+
+
+
+.asidecontact
+{
+text-align: center;
+
+}
+
+
+.titaside
+{
+
+  margin-top: 0;
+}
+
+.parafasidemid
+{
+
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.parafaside
+
+{
+padding-bottom: 20px;
+
+
+}
+
+.icons
+{
+padding-bottom: 25px;
+padding-top:25px;
+}
+
+.blocArticle
+{
+
+  width: auto;
+  margin: auto;
+  padding-bottom: 10px;
+}
+.titarticle
+{
+
+  margin-right: 30px;
+}
+
+.titarticle2
+
+{
+margin-right: 30px;
+
+}
+
+.form1
+{
+
+ /* margin-right: 30px;*/
+ margin-left: 50px;
+}
+
+
+.ensemble1
+{
+margin-left: 50px;
+
+}
+.blocrecommand
+{
+/*display: flex;*/
+flex-direction: column;
+text-align: center;
+
+}
+
+}
+
+
+/*new querries petit ecran */                               
+
+@media all and (max-width: 840px)
+
+
+
+  {
+h1
+{
+display: flex;
+  justify-content: center;
+}
+
+
+.letitreprincipal
+{
+text-align: center;
+
+}
+  
+
+.bloc_page
+  {
+    width: auto;
+    margin:auto;
+    
+    flex-direction: column-reverse;
+    
+}
+
+aside
+{
+
+  width: auto;
+  margin: auto;
+  
+}
+
+
+
+.asidecontact
+{
+text-align: center;
+
+}
+
+
+.titaside
+{
+
+  margin-top: 0;
+}
+
+.parafasidemid
+{
+
+  text-align: center;
+  padding-bottom: 20px;
+}
+.parafaside
+
+{
+ margin-bottom: 20px;
+
+}
+.icons
+{
+padding-bottom: 25px;
+padding-top: 25px;
+}
+
+
+.blocArticle
+{                               /* autoauto padbottom*/
+  
+  margin: 0px 2px;
+
+
+}
+
+
+.titreentreprise
+
+{
+padding-top: 20px;
+
+}
+
+.pointdate
+
+{
+padding-right: 150px;
+margin-left: 0px;
+
+}
+
+.datearticle
+
+{
+
+
+/*margin: auto;*/ /* je viens de changer*/
+
+width: 160px;
+
+}
+
+
+.titarticle
+{
+
+  margin-right: 30px;
+}
+
+.titarticle2
+{
+margin-right: 30px;
+
+}
+
+.form1
+{                                                  /*margn left 50*/
+
+  /*margin:auto;*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+
+  
+
+  margin-left: 50px;
+  
+
+
+}
+
+.ensemble1
+{
+
+flex-direction: column;
+/*padding-top: 10px;   /*je viens de changer*/
+/*align-items: center;*/
+
+
+
+}
+
+.blocrecommand
+{
+/*display: flex;*/
+flex-direction: column;
+
+}
+
+.recommand
+
+{
+
+  margin: auto;
+}
+
+.recommand2
+{
+margin: auto;
+
+}
+h4
+{
+
+  margin-top: 5px;
+
+
+
+}
+
+
+
+}
+}
+
+
+
+
+
 
 /* remarque: paragraphe a propos de moi doit etre 2 fois plus grand*/;
 

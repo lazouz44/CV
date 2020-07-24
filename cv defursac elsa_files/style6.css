@@ -1,0 +1,718 @@
+
+
+/*definition de la police*/
+
+font-face {
+    font-family: 'ambleregular';
+    src: url('Amble-Regular-webfont.eot');
+    src: url('Amble-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Amble-Regular-webfont.woff2') format('woff2'),
+         url('Amble-Regular-webfont.woff') format('woff'),
+         url('Amble-Regular-webfont.ttf') format('truetype'),
+         url('Amble-Regular-webfont.svg#ambleregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*ELEMENTS PRINCIPAUX*/
+
+body
+{
+	
+	font-family:amble,arial,trebuchet
+	
+
+}
+
+
+
+
+
+
+
+
+.bloc_page
+      {                     /* MISE EN PAGEmettre les bonnes dimensions par rapport a la maquette?e meme pour
+      	                        les couleurs *//*TEST AVEC NEW PIXEL SA DEROULE TITRE EN HAUT*/
+width: 100%;
+
+
+}
+
+
+
+
+
+
+/*new  query test*/
+@media all and (max_widht: px)
+
+{
+   #bloc_page
+  {
+  	width: auto;
+  	
+  	}
+
+}
+
+
+
+
+                  
+/*body*/
+
+/*section*/
+
+
+.letitreprincipal    /* pb tout s'est décalé je ne sais pas pkoi*/
+
+{                             
+                                  /*alignement ok mais elsade pas elsa de*/
+
+justify-content: space-between;
+align-items: center;
+  line-height: 3.5%
+
+}
+
+
+h1    
+
+ {
+  display: flex;
+ 	justify-content: center;                 
+font-family:trebuchet,arial;
+font-size: 2.5em;
+
+font-weight: normal;
+color: rgb(1,14,5);
+         /* quand je change la margin top de header larticle descend*/
+
+
+
+ }
+
+
+
+
+
+  h2               /* A DISPARU CE CON*//*je dois peut etre creer une div pour h2*/
+ {
+ 	display: flex;
+ 	
+  justify-content: center;
+
+                            /*ux quil soit juste en dessous... margin top marche pas*/
+ 	                                   /*creer une position relative et absolue entre les 2 titres?*/
+font-family: arial;                                     /*line heigth? A DISPARU*/
+font-size: 1em
+
+
+margin-left:
+
+
+font-weight: normal;
+color:rgb(62,60,68);
+
+ }
+
+
+
+
+ .prenom   /* 2 div dans le titre , accolé.. peut etre utiliser span plutot qyun div*/
+ {
+  display: flex;
+color: rgb(92,138,77); /* test avec span pas de changement cest bizareee*/
+margin-right: 10px;
+
+ }
+
+.dev
+{
+ border-bottom: 3px rgb(92,138,77) solid;
+
+}
+
+
+
+
+
+
+
+
+
+.fas fa-graduation-cap    /*icones titres */
+
+{
+
+color: rgb(24,193,131);
+ 
+
+
+}
+
+.fas fa-pencil-alt
+{
+
+
+
+}
+.fas fa-briefcase
+{
+
+
+}
+
+
+
+
+
+section
+{
+	
+	                        /*peut etre ici pour que mon aside aille jusquen ht?*/
+	
+  justify-content: center;
+  padding: 0px;
+    
+    
+
+    }
+
+
+
+
+/* jai enlevé le row reverse et mis flex start ca fonctionne*/
+
+
+
+
+                                      /* yes jai reussi avec row reverse a mettre mon aside a gauche
+ je me demande si c pas ici que je dois faire un truc pour que mon aside ne morde
+ pas sur mon article........a moins que le pb sois mon article ..on dirait quil nest plus
+ positionné par rapport a laside ...margin left?  oui ok*/
+
+
+
+
+
+
+
+
+
+section,aside   /* je considere que ma section se compose dun article avec 
+                                     3 parties form exp et recom , un aside en 3 parties*/
+
+{
+	text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+/* new query test*/                                
+
+@media all and (max_widht: px)
+
+
+  
+  {
+
+section, aside
+{
+  width: auto;
+  margin-bottom: 
+}
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+section                                   
+                                                           
+{
+	
+	
+	
+	justify-content: space-between;
+  margin-left: 25%;
+  width: 55%;
+  margin-right: 20px;
+  
+
+
+	
+
+	}
+
+
+
+.icondot
+{
+
+color: rgb(92,138,77);
+padding-right: px; 
+font-size: 8px;
+}
+
+.iconcircle
+
+{
+ 
+color: rgb(92,138,77);
+margin-right:px; 
+font-size: 8px;
+}
+
+
+     .reverse       /* hop je change lordre avec openc en 1er hihi*/
+     {
+         display: flex;
+         flex-direction: column-reverse;
+
+     }                   
+
+
+
+.titarticle
+{
+margin-left: 150px;
+margin-top: 100px;
+margin-bottom: 50px;
+display: flex;
+flex-direction: center;
+border-bottom: 3px rgb(92,138,77) solid;
+  /* soucis ca prend tte la longueur*/
+
+}
+
+
+
+.titreentreprise  /* je souhaite que le titre et le texte aille a coté:!*/
+{                    /*c ok mais c le bordel*/
+
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center; 
+
+                          /* test  rajout*//*jenleve pour voir si c ca le pb*/
+color:rgb(62,60,68);
+font-weight: bold;
+
+
+
+}
+
+.datetitre
+{
+display: flex;                     /*la date et le titre sont alignés flex :row auto le point a disparu*/
+flex-direction: column;            /* les voilà décalés , now le paragraphe doit suivre le titre*/
+justify-content: flex-start;
+line-height: 1px; 
+margin-left: px;
+ 
+color:rgb(62,60,68);
+font-weight: bold;
+
+}
+
+        
+
+.para                      /*est ce que je creeererai pas une seule et même entité?
+                               que mon titre et le paragraphe appartiennent a la même div
+                                 comme ça hop le paraf suit */
+{
+
+	display: flex;              /*alélouia ! jai reussi a faire en sorte que le paraf
+	                                aille sous le titre en lalignent à la fin sur laxe secondaire */
+	flex-direction: column;
+  color:rgb(62,60,68);
+
+	justify-content: ;  /* test*/
+	align-items: flex-start;  
+	
+
+  }
+
+
+
+.form1       /* contient titentreprise sous titre et para*/
+
+
+{
+display: flex;
+flex-direction: column;
+
+align-items: baseline;
+
+
+
+}
+
+.ensemble1            /*contient datetitre titrentreprise ss titre para*/
+{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+
+
+
+.blocrecommand
+
+{
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+
+.recommand
+{
+
+  display: flex;
+  margin-left: px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.recommand2
+
+{
+
+float: right;
+
+
+}
+
+
+.emailrec
+
+{
+color:rgb(62,60,68);
+
+
+}
+
+
+.profil   /*correspond au profil de la recommandation*/
+
+{
+
+
+
+
+}
+
+
+
+
+
+
+aside                                      /* pb de dimension de page*//*dois je creer un liseret?*/
+{
+	                        /*ou je fais en sorte que mon aside aille jusquen haut*/
+	 float: left;
+ 
+
+	justify-content: space-between;
+  width: 18%;
+  ;
+
+                   /* je tente cette position = en haut a gauche mais recouvre tout
+                                       cache mes dates et le reste de la'article va en dessous */
+background-color: rgb(92,138,77);
+                             
+                                  /*je tente avec bottom 0 p fixed et top o le truc c quavec fixed le reste deroule,
+                                 jenleve*//*avec height 100 prct ce se retrecit!*/
+                      /*avec top px ca reste en haut*/
+
+font-size: 0.8em;
+
+      
+                     
+
+
+}
+
+
+
+
+                      /*avant width 200 */
+ 
+
+
+                    /* je souhaite que ca mon jusqu'en haut! là fonctionne avec la section 
+                    donc sarrete comme larticle , je veux que ca aille jusqu'au header.... position ?
+
+
+                   avec le min height cest bon prend toute la hauteur mais recouvre
+                    mon article ==<ok article décale avec margin left*/
+ 
+/* contact + petit qua propos de moi , utiliser flex grow?*/
+
+
+
+
+
+
+
+
+
+
+.logo                      /*il faut que mon image aille au niveau de laside , e haut a gauche*/
+{ 
+	display: flex;
+	justify-content: center;
+
+ }
+
+
+
+
+
+
+
+
+.logo img    
+ {
+ 	width: 150px;     /*avant 99  100px */
+ 	height: 150px;
+ 	border-radius: 100px;  /* youpi cest arrondie !!*/  /* avt avec 50px*/
+ 	box-shadow: ;
+
+
+  
+     
+ 	}
+
+
+
+
+.icons
+{
+display: flex;
+justify-content: space-around;
+font-size: 40px;
+
+
+
+}
+
+
+
+
+
+.titaside   /* encadré avec fond plein noir en mettant un background  et couleur verte au texte*/
+{
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color:rgb(92,138,77);
+	  
+	
+	margin-top: 0px;
+	border: 8px rgb(62,60,68) solid;
+	background: rgb(62,60,68);
+	
+
+}
+
+
+.parafasidemid      
+{
+display: flex;  
+flex-direction: column;
+justify-content: flex-start;
+                            
+padding-top:5px;               
+color: rgb(62,60,68);
+margin-top: 0px;
+margin-left: 25px;
+margin-right: 25px;
+flex: ; /* faudra faire un flex 2 quand mise en page ok*/
+
+
+}
+
+
+.parafaside
+
+{
+              /* ni text align ni align items ne fonctionne*/ 
+display: flex;  
+flex-direction: column;
+
+                            /*jajoute un display pour bouger le texte du paraF*/
+padding-top:5px;               
+color: rgb(62,60,68);
+margin-top: 0px;
+margin-left: 25px;
+
+}
+
+
+#parafaside /* correspond au paraf contact avec saut de ligne*/
+
+{
+ 
+display: flex; 
+ 
+flex-direction: column;
+justify-content: flex-start;
+
+                
+padding-top:px;               
+color: rgb(62,60,68);
+margin-top: px;
+margin-left: 45px;
+
+
+
+
+}
+
+.add         /* alors là je ne sais plus pourquoi j'ai créee ça mais ca parait bien géré par#parafaside*/
+{
+margin-top: 0px;
+margin-left:px;
+
+
+}
+
+.tel
+{
+margin-top: 0px;
+margin-left:px;
+
+}
+
+.site
+{
+margin-top: 0px;
+margin-left:px;
+
+}
+
+.skype
+{
+margin-top: 0px;
+margin-left:px;
+
+}
+
+/* remarque: paragraphe a propos de moi doit etre 2 fois plus grand*/;
+
+
+
+
+
+/*resumé des soucis!
+:
+- pour le header 
+
+elsa est accolé a de fursac , pb de div?
+mise en page pas bonne
+
+-pour l'article
+les paragraphes ne sont pas a coté de la date   ,,  ok
+les titres ne sont pas au niveau des dates  et pas bien soulignés   ok
+au4/07 : bien cote a cote mais titre pas sous formation  paragraphe va une peu dans 
+tous les sens!
+
+au 08/07: nouvelles dimensions grace a la maquette , 
+probleme de marge titre et paragraphes.... jai mis des max widht et height à
+mes conteneurs c'est peut être ça le soucis qui fait que tout se resserre ;
+
+au 10 : tjs pas reglé le soucis, il faut aussi un espace entre titre du paragraphe;
+et paragraphe faut creeer une div 
+au 16 : modif du html tout descend;
+
+- pour aside ,==> now le seul element en position absolute
+ne fait pas toute la page
+les paragraphes sont mal positionnés ,faut mettre margin mais 
+ni arrive pas
+ au 16 remonte totalement 
+ lensemble par en vrille!
+
+
+==>
+jai mis en absolute va en haut a gauche super mais recouvre une partie de larticle qui fini
+par aller en dessous de laside , et ne prend pas toute la hauteur de la page
+
+==>jai ensuite mis un min height au lieu de max height et hop ca prend toute la page 
+merveilleux!
+mais non.
+ca bouffe mon article .... qui parait pas assez large et mon aside trop large pourtant jai p
+pris les mesures de la maquette.
+larticle est en dessous je crois
+ je pense avoir un probleme avec les min et max wh 
+
+ ==> jai mis une marge a gauche pour mon article et cest ok 
+ du coup niveau dimension ca correspond plus vraiment au cv de base */
+
+
+
+/*au 15/07  objectifs
+- travail sur les parafaside ; reussi a les mettre a gauche ,
+ maintenant je souhaite quils soeint en haut
+ test avec text aline ; vertical aline ,aline items  marche pas
+
+
+
+
+
+
+ - remettre les titresarticle de exp et recom comme formation
+ car tout est décalé sous laside : quand je mets article en postion fixed
+ seul formation et son paragraphe sont fixe! comme si le reste n'appartenait pas a la
+ section  c bizzaaaare;
+
+
+
+
+
+ - travail sur article titre et paraf doivent etre colonne bien aligné
+
+ahaha et ba jai modifié tous le html de mon article!
+gros b* puis sa fini par ressembler a quelque chose 
+la liste a puce sans puce me compliquait la vie 
+
+
+
+
+ -mettre en place media query*/
+
+/*au 16/ 07
+jai fait des modifs hier de mon html ou 
+javais des li pour creeer mon article. javais du mal a les mettre en place 
+alors jai tt changé
+ce qui en ressort: mon article va jusquen bas et laside remonte en haut!
+la mise en page est pas bonne ; blocage par rapport a ça
+jaimerai mettre ca sur git , corriger avec visual mais 
+ne sais pas sen servir peur de tt supprimer*/
+
+
+
+
