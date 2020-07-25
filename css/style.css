@@ -1,0 +1,507 @@
+
+
+/*definition de la police*/
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Roboto-Regular-webfont.woff');
+    src: url('Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Roboto-Regular-webfont.woff2') format('woff2'),
+         url('Roboto-Regular-webfont.woff') format('woff'),
+         url('Roboto-Regular-webfont.ttf') format('truetype'),
+         url('Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*ELEMENTS PRINCIPAUX*/
+
+body                                                          
+{
+ font-family: 'robotoregular';
+ max-width: 900px;
+ margin: auto;
+ border-right: 1px solid rgb(92,138,77);
+ border-left: 1px solid rgb(92,138,77);
+}
+
+.bloc_page
+{            
+  display: flex;        
+}
+
+
+             
+/*BODY*/
+
+
+/*ASIDE*/
+
+
+aside                                      
+{
+ width: 33%;
+ background-color: rgb(92,138,77);                            
+}
+
+.logo
+{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.logo img    
+{
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px rgb(62,60,68);
+}
+
+.icons
+{
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.iskate
+{
+ border: 1px solid black;
+ padding: 10px 10px;
+ border-radius: 50%;
+}
+
+.itof
+{
+ border: 1px solid black;
+ padding: 10px 10px;
+ border-radius: 50%;
+}
+
+.icare
+{
+ border: 1px solid black;
+ padding: 10px 10px;
+ border-radius: 50%;
+}
+
+.titaside   
+{
+ text-align: center;
+ color:rgb(92,138,77);
+ font-size: 1.3em;
+ text-transform: uppercase;
+ padding: 5px;
+ letter-spacing: .4px;
+ background: rgb(62,60,68);
+}
+
+.parafasidemid        
+{
+
+ text-align: justify;
+ padding-top: 0px;
+ padding-right: 20px;
+ padding-bottom: 740px;
+ padding-left: 20px;               
+ color: rgb(62,60,68);
+}
+
+.parafaside
+
+{
+ padding-top: 0px; 
+ padding-left: 0px;              
+ color: rgb(62,60,68);
+}
+
+.add         
+{
+ list-style: none;
+ padding-left: 20px;
+}
+
+.tel
+{
+ list-style: none;
+ padding-left: 20px;
+
+}
+
+.site
+{
+ list-style: none;
+ padding-left: 20px;
+
+}
+
+.skype
+{
+ list-style: none;
+ padding-left: 20px;
+
+}
+
+
+/*SECTION*/
+
+section
+{
+ padding-left: 5%;
+}
+
+.letitreprincipal    
+
+{                             
+ padding-top: 60px;
+ line-height: 3%;
+}
+
+h1    
+{ 	                
+ font-family:trebuchet,arial;
+ font-size: 2.5em;
+ font-weight: normal;
+ color: rgb(1,14,5);
+}
+
+.prenom   
+{
+ color: rgb(92,138,77); 
+ margin-right: 10px;
+}
+
+.dev
+{
+ border-bottom: 1px rgb(92,138,77) solid;
+
+}
+
+.titreimage i   
+
+{
+ color: rgb(92,138,77);
+}
+
+.ensemble1 i
+{
+ color: rgb(92,138,77);
+ font-size: 11px;
+ padding-top: 10px;
+ padding-right: 0px;
+}
+.facircle
+{
+ font-size: 2px;
+}
+
+.blocArticle
+{
+ margin-right: 50px;
+}
+
+.ensemble1            
+{
+ display: flex;
+}
+
+article   /*ancien form1*/   
+{
+ margin-bottom: 20px;
+}
+
+.titarticle   
+{
+ margin-top: 80px;
+ font-size: 1.3em;
+ padding: 0 0 8px 15px;
+ text-transform: uppercase;
+ border-bottom: 1.5px rgb(92,138,77) solid;
+  }
+
+.titarticle2   
+{
+ margin-top: 40px;
+ font-size: 1.3em;
+ padding: 0 0 8px 15px;
+ text-transform: uppercase;
+ border-bottom: 1.5px rgb(92,138,77) solid;
+}
+
+.datearticle 
+{
+ min-width: 180px;
+ margin-top: 3px;
+ padding-top: 3px;
+ color:rgb(62,60,68);
+ font-weight: bold;
+ padding-left: 10px;
+}
+
+.titreentreprise         
+{                    
+ margin-bottom: 0px;
+ text-transform: uppercase;
+ margin-top: 3px;
+ padding-top: 3px;
+ color:rgb(62,60,68);
+}
+
+.para                      
+{
+ color:rgb(62,60,68);
+}
+
+.date
+{
+ list-style: none;
+}
+        
+.lieux
+{
+ list-style: none;
+}
+
+.ul
+{
+ list-style: none;
+ padding-left: 0px;
+}
+
+.blocrecommand
+{
+ display: flex;
+ justify-content: space-around;
+}
+
+.recommand
+{
+ padding-bottom: 5px;
+}
+
+
+
+
+/* new query test*/                                
+
+@media all and (max-width: 1024px) and (min-width: 601px)
+
+  {
+h1
+{
+ display: flex;
+ justify-content: center;
+}
+
+.letitreprincipal
+{
+ text-align: center;
+}
+  
+.bloc_page
+{
+ width: auto;
+ margin:auto;
+ flex-direction: column-reverse;
+}
+
+aside
+{
+width: auto;
+margin: auto;
+}
+
+.asidecontact
+{
+ text-align: center;
+}
+
+.titaside
+{
+ margin-top: 0;
+}
+
+.parafasidemid
+{
+ text-align: center;
+ padding-bottom: 20px;
+}
+
+.parafaside
+
+{
+ padding-bottom: 20px;
+}
+
+.icons
+{
+ padding-bottom: 25px;
+ padding-top: 25px;
+}
+
+.blocArticle
+{
+ width: auto;
+ margin: auto;
+ padding-bottom: 10px;
+}
+
+.titarticle
+{
+ margin-right: 30px;
+}
+
+.titarticle2
+{
+ margin-right: 30px;
+} 
+
+article
+{
+ margin-left: 50px;
+}
+
+.ensemble1
+{
+ margin-left: 50px;
+}
+
+.blocrecommand
+{
+ flex-direction: column;
+ text-align: center;
+}
+
+}
+
+
+/*new querries petit ecran */                               
+
+@media all and (max-width: 600px)
+ {
+h1
+{
+ display: flex;
+ justify-content: center;
+}
+
+
+.letitreprincipal
+{
+ text-align: center;
+}
+  
+
+.bloc_page
+{
+ width: auto;
+ margin:auto;
+ flex-direction: column-reverse;
+}
+
+aside
+{
+width: auto;
+margin: auto;
+}
+
+.asidecontact
+{
+ text-align: center;
+}
+
+.titaside
+{
+ margin-top: 0;
+}
+
+.parafasidemid
+{
+ text-align: center;
+ padding-bottom: 20px;
+}
+.parafaside
+
+{
+ margin-bottom: 20px;
+}
+
+.icons
+{
+ padding-bottom: 25px;
+ padding-top: 5px;
+}
+
+.blocArticle
+{                               
+ margin: 0px 2px;
+}
+
+.titreentreprise
+
+{
+ padding-top: 20px;
+}
+
+.datearticle
+
+{
+ margin-bottom: 0px;
+}
+
+.titarticle
+{
+ margin-right: 30px;
+}
+
+.titarticle2
+{
+ margin-right: 30px;
+ margin-top: 0px;  
+}
+
+article
+{                                                  
+ 
+}
+
+.ensemble1
+{
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ }
+.ensemble1 i
+{
+  padding-top: 0px
+}
+.blocrecommand
+{
+ flex-direction: column;
+}
+
+.recommand
+{
+ margin: auto;
+}
+
+.recommand2
+{
+ margin: auto;
+}
+
+h4
+{
+ margin-top: 5px;
+}
+
+}
+
+
+
+
+
