@@ -1,19 +1,21 @@
 
 
-/*definition de la police*/
+/*DEFINITION DE LA POLICE*/
+
+
 
 @font-face {
     font-family: 'robotoregular';
-    src: url('Roboto-Regular-webfont.woff');
-    src: url('Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    src: url('/C:/Siteweb/CV/font/roboto_regular_macroman/Roboto-Regular-webfont.woff');
+    src: url('Roboto-Regular-webfont.woff') format('woff'),
          url('Roboto-Regular-webfont.woff2') format('woff2'),
-         url('Roboto-Regular-webfont.woff') format('woff'),
+         url('Roboto-Regular-webfont.eot?') format('eot'),
          url('Roboto-Regular-webfont.ttf') format('truetype'),
          url('Roboto-Regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
+           }
 
-}
 
 
 /*ELEMENTS PRINCIPAUX*/
@@ -63,28 +65,27 @@ aside
 {
   display: flex;
   justify-content: space-around;
-  font-size: 40px;
+  font-size: 30px;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .iskate
 {
- border: 1px solid black;
+ border: 2px solid black;
  padding: 10px 10px;
  border-radius: 50%;
 }
 
 .itof
 {
- border: 1px solid black;
+ border: 2px solid black;
  padding: 10px 10px;
  border-radius: 50%;
 }
 
 .icare
 {
- border: 1px solid black;
+ border: 2px solid black;
  padding: 10px 10px;
  border-radius: 50%;
 }
@@ -102,7 +103,6 @@ aside
 
 .parafasidemid        
 {
-
  text-align: justify;
  padding-top: 0px;
  padding-right: 20px;
@@ -112,7 +112,6 @@ aside
 }
 
 .parafaside
-
 {
  padding-top: 0px; 
  padding-left: 0px;              
@@ -129,21 +128,18 @@ aside
 {
  list-style: none;
  padding-left: 20px;
-
 }
 
 .site
 {
  list-style: none;
  padding-left: 20px;
-
 }
 
 .skype
 {
  list-style: none;
  padding-left: 20px;
-
 }
 
 
@@ -155,7 +151,6 @@ section
 }
 
 .letitreprincipal    
-
 {                             
  padding-top: 60px;
  line-height: 3%;
@@ -178,25 +173,25 @@ h1
 .dev
 {
  border-bottom: 1px rgb(92,138,77) solid;
-
 }
 
 .titreimage i   
-
 {
  color: rgb(92,138,77);
+ margin-right: 15px;
 }
 
 .ensemble1 i
 {
  color: rgb(92,138,77);
- font-size: 11px;
  padding-top: 10px;
  padding-right: 0px;
+ font-size: 10px;
 }
+
 .facircle
 {
- font-size: 2px;
+ font-size: 6px;
 }
 
 .blocArticle
@@ -209,7 +204,7 @@ h1
  display: flex;
 }
 
-article   /*ancien form1*/   
+article     
 {
  margin-bottom: 20px;
 }
@@ -221,7 +216,7 @@ article   /*ancien form1*/
  padding: 0 0 8px 15px;
  text-transform: uppercase;
  border-bottom: 1.5px rgb(92,138,77) solid;
-  }
+}
 
 .titarticle2   
 {
@@ -376,6 +371,15 @@ article
  text-align: center;
 }
 
+.iskate
+{
+  margin-left: 150px;
+}
+
+.icare
+{
+ margin-right: 150px;
+}
 }
 
 
@@ -389,13 +393,11 @@ h1
  justify-content: center;
 }
 
-
 .letitreprincipal
 {
  text-align: center;
 }
   
-
 .bloc_page
 {
  width: auto;
@@ -405,8 +407,8 @@ h1
 
 aside
 {
-width: auto;
-margin: auto;
+ width: auto;
+ margin: auto;
 }
 
 .asidecontact
@@ -442,13 +444,11 @@ margin: auto;
 }
 
 .titreentreprise
-
 {
  padding-top: 20px;
 }
 
 .datearticle
-
 {
  margin-bottom: 0px;
 }
@@ -464,21 +464,18 @@ margin: auto;
  margin-top: 0px;  
 }
 
-article
-{                                                  
- 
-}
-
 .ensemble1
 {
  display: flex;
  flex-direction: column;
  text-align: center;
- }
+}
+
 .ensemble1 i
 {
   padding-top: 0px
 }
+
 .blocrecommand
 {
  flex-direction: column;

@@ -1,0 +1,1440 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+/*creation d'animation CSS moderne ! *//* COURS */
+
+
+
+$cd-btn: #011c37;
+$cd-txt: #15DEA5;
+.btn {
+    background: $cd-btn;
+    color: $cd-txt;                  /* LES PROPRIETES DE TRANSITIONS DOIVENT ETRE DANS LE SELECTEUR
+    QUI CONTIENT LE POINT DE DEPART DE LELEMENT il ne faut pas les mettre dans hover*/
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1.85rem 3rem;
+    border-radius: 10rem;
+    transform: scale(1); /* valeure initiale*/
+    &:hover {
+        transform: scale(1.15);/* valeur finale*/
+    }
+}
+
+
+
+$cd-btn: #011c37;
+$cd-txt: #15DEA5;
+.btn {
+    background: $cd-btn;
+    color: $cd-txt;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1.85rem 3rem;
+    border-radius: 10rem;
+    transform: scale(1);/* valeur iniitale*/
+    transition: transform 400ms; /* voila la transition est annoncée et en plus on a sa durée 
+    c'est fantastique*/
+    &:hover {
+        transform: scale(1.15);/* valeure finale*/
+    }
+}
+
+
+/* COMBINER DES TRANSITIONS */
+
+
+.btn {
+    background-color: $cd-btn-start;/* couleur de départ*/
+    border: 4px solid $cd-btn;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size: 3rem;
+    overflow: hidden;
+    padding: 1.85rem 3rem;
+    position: relative;
+    transition: all 450ms;/* avec all le scale et background seront modifiés*/
+    &:hover {
+        transform: scale(1.13);
+        background-color: $cd-btn-end;/* couleur au survol de la souris*/
+    }
+}
+/* si je sépare par de virgules au lieu de mettre all je peux
+donner une durée différente à chaque element */
+
+transition: transform 450ms, background-color 300ms;
+
+/* Ici je rajoute une delay de 150 comme ca tout se termine en meme temps le
+backG ne sera pas opaque avant la fin la T backg commence 150ms plus tard*/
+
+transition: transform 450ms, background-color 300ms 150ms;
+
+transition: transform 450ms, background-color 300ms;
+transition-delay: 0, 150ms;/* on met pas le0 valeur par défaut*/
+
+/*fonctionalité validation de champ et focus*/
+
+$cd-txt: #6300a0;
+$cd-txt--invalid: #fff;
+$cd-danger: #b20a37;
+.form {
+    &__group {
+        & input {
+            border: 2px solid $cd-box;
+            border-radius: 100rem;
+            color: $cd-txt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 100%;
+            &:focus {
+                border: 2px solid $cd-txt;
+            }
+            &:invalid {
+                background: $cd-danger;
+                border: 2px solid $cd-danger;
+                color: $cd-txt--invalid;
+            }
+        }
+    }
+}
+$cd-txt: #6300a0;
+$cd-txt--invalid: #fff;
+$cd-danger: #b20a37;
+.form {
+    &__group {
+        & input {
+            border: 2px solid $cd-box;
+            border-radius: 100rem;
+            color: $cd-txt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 100%;
+            &:focus {
+                border: 2px solid $cd-txt;
+            }
+            &:not(:focus):invalid {
+                background: $cd-danger;
+                border: 2px solid $cd-danger;
+                color: $cd-txt--invalid;
+            }
+        }
+    }
+}
+/*pour que le feeedback de validation soit donné qd utilisateru a fini de remplir le
+ckamps utiliser :not*/
+$cd-txt: #6300a0;
+$cd-txt--invalid: #fff;
+$cd-danger: #b20a37;
+.form {
+    &__group {
+        & input {
+            border: 2px solid $cd-box;
+            border-radius: 100rem;
+            color: $cd-txt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 100%;
+            transition: background-color 500ms;/* on rajoute une transition au backg pour effet + fondu*/ 
+            &:focus {
+                border: 2px solid $cd-txt;
+            }
+            &:not(:focus):invalid {
+                background-color: $cd-danger;
+                border: 2px solid $cd-danger;
+                color: $cd-txt--invalid;
+            }
+        }
+    }
+}
+
+/* SCALE*/
+
+
+
+
+.btn {
+    :hover + .box {/* quand on appuie sur le bouton cest la box qui selargit*/
+        transform: scaleX(2); /*lelement se deplace de 200% horizontalement*/
+    }
+}
+.box {
+    transition: transform 330ms ease-in-out;
+}
+
+
+    }
+
+
+
+    /*ex pour TRANSLATE, la on a un carré avec boop marqué dedans*/ 
+
+.btn {
+    :hover + .box {
+        transform: scale(1);
+        span {
+            transform: translateY(0);/* texte hors de la boite au debut*/
+        }
+    }
+}
+.box {
+    transform: scale(0.1);
+    transition: transform 330ms ease-in-out;
+    overflow: hidden;/* texte apparait pas tant que pas dans boite*/
+    span {
+        display: inline-block;  /* car span est inline , il faut quil soit manipulable*/
+        transform: translateY(250%);
+        transition: transform 280ms ease-out 50ms;
+    }
+}
+
+<div class="container">
+    <button class="btn">Transform!</button>
+    <div class="box">
+        <span>Boop!</span> /*dans span car doit etre manipulable*/
+    </div>
+</div>
+
+/* ex avec le même carré mais en combinant scale et translate on veut de la 
+translation et du changment d'echelle */ 
+
+
+/* combiner les fonctions*/
+
+.btn {
+    :hover + .box {
+        transform: scale(1);
+        transform: rotate(0deg); /*ca part dun quart de tour de -90 a 0 deg*/
+    span {
+            transform: translateY(0);
+        }
+    }
+}
+.box {
+   overflow: hidden;
+   transform: scale(.1);
+   transform: rotate(-90deg);/* la boite et le texte tournent d'un quart de tour*/
+   transition: transform 330ms ease-in-out;
+span {
+      transform: translateY(250%);
+      transition: transform 280ms ease-out 50ms;
+      display: block;
+
+    } 
+}
+/* =====>la hic pb ca pivote scale a disparu, rotate lecrase
+on ne peu assigner qune seule propriété transform a un element!
+Ce qu'il faut : mettre a la suite les deux fonction = */
+
+
+.btn {
+    :hover + .box {
+        transform: scale(1) rotate(0deg);/* voila les 2 fonctions st a coté*/
+        span { 
+            transform: translateY(0);
+        }
+    }
+}
+.box {
+    overflow: hidden;
+    transform: scale(.1) rotate(-90deg);
+    transition: transform 330ms ease-in-out;
+    span {
+        transform: translateY(250%);
+        transition: transform 280ms ease-out 50ms;
+        display: block;
+    }
+}
+
+/*on utilise box base pour etablir un ordre lecture de droite à gauche*/
+
+.btn {
+    :active + .box {
+        & > .box__base--tranxScale {  /* la box 1 va sagrandir puis se deplacer*/
+        transform: translateX(200%) scale(2);
+    }
+    & > .box__base--scaleTranx {
+        transform: scale(2) translateX(200%);
+        }
+    }
+}
+.box {
+    &__base {
+        &--tranxScale {
+            background-color: #15dea5;
+            transition: transform 330ms ease-in-out;
+        }
+        &--scaleTranx {
+            background-color: pink;
+            transition: transform 330ms ease-in-out;
+        }
+    }
+}
+
+
+
+
+
+
+/*exemple manip de ROTATE*/
+
+<div class="container">
+    <button class="btn">Transform!</button>
+    <div class="boxes">/* les box doivent etre dans un contenant*/
+        <div class="boxes__base boxes--rotDegrees">rotate(360deg)</div>  /*attention a la hierarchie idem css*/ /* 2 boites*/
+        <div class="boxes__base boxes--rotTurns">rotate(1turn)</div>
+    </div>
+</div>
+
+
+/* en css tjs pour rotate suis le html du dessus*/
+
+.btn {
+    :hover + .boxes {
+        & > .boxes--rotDegrees {
+            transform: rotate(0deg);/*on les fait tourner vers la position 0 degré*/
+        }
+        & > .boxes--rotTurns {
+             transform: rotate(0turn);
+        }
+    }
+}
+.boxes {
+   &--rotDegrees {
+        transform: rotate(-360deg);/*chaque boite commence en rot négative de -360*/
+        transition: transform 500ms ease-in-out;
+    }
+
+    &--rotTurns {
+        background: pink;
+        transform: rotate(-1turn);
+        transition: transform 500ms ease-in-out;
+    }
+}
+
+/*la fonction SKEW*/ /* inclinaison*/
+
+.box {
+    &--skewX {
+        transform: skewX(45deg);
+    }
+    &--skewY {
+        transform: skewY(45deg);
+    }
+    &--skew {
+        transform: skew(45deg, 45deg);
+    }
+}
+
+/*la fonction 3D*/
+
+.box {
+    &--perspective75px { /* ou se situe le spectateur, a 75 px l'objet est proche*/
+        transform: perspective(75px) rotateX(45deg);
+    }
+    &--perspective150px {
+        transform: perspective(150px) rotateX(45deg);
+    }
+    &--perspective300px {
+        transform: perspective(300px) rotateX(45deg);
+    }
+}
+
+/* DEPLACER LE CENTRE D'UN OBJET*/
+<div class="container">
+    <div class="btn">Charger!</div>
+    <div class="progress">
+        <div class="progress__bar"></div>
+    </div>
+</div>
+
+.box--top-origin {
+// positionne l'origine au sommet de l'élément
+    transform-origin: 50% top;
+}
+
+.box--left-origin {
+// positionne l'origine au centre de l'élément
+    transform-origin: center center;
+}
+
+.btn {
+    &:active {
+        & + .progress {   /* je ne comprend pas ca*/
+            & > .progress__bar {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+.progress {
+    &__bar {
+        transform-origin: 0%;/* on enleve la valeur Y modification axe X autant noter left*/
+        transform: scaleX(0);
+    transition: transform 1000ms cubic-bezier(.32,0,.07,1);
+    }
+}
+
+/* 3D avec transforme origin*/
+
+.btn {
+    perspective: 500px;
+    &:active {
+        & > .btn__flip {  /* il sort dou le flip*/
+            transform: rotateX(-90deg);
+    }
+}
+&__flip {
+    transform-style: preserve-3d;/* preserve sort dou?*/
+        transform-origin: center bottom 7.5vw;/* on a rajouté une valeure z en unité reelle*/
+        transition: transform 500ms cubic-bezier(.7, 0, .23, 1);
+        &--off {
+            transform: rotateX(0deg) translateZ(7.5vw);
+        }
+        &--on {
+            transform: rotateX(90deg) translateZ(7.5vw);
+        }
+    }
+}
+
+
+
+
+
+/* OPACITY*/
+<button class="btn">
+    Survole moi!
+    <div class="btn__bg"></div>
+</button>
+
+$border-rad: 2rem;
+$clr-btn: #15DEA5;
+.btn {
+    border-radius: $border-rad;
+    background-color: $clr-btn;
+    position: relative;
+    z-index: 1; /* z index permet de superposer*/
+    &:hover {
+        & .btn__bg {
+            opacity: 1;  /* la couche du haut plus sombre, on peu la faire disparaitre avec opacity*/
+        }
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: darken($clr-btn, 5);/* un back ground plus sombre */
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+
+/*CREATION DE PSEUDO ELEMENTS*/
+
+/*la ici on crée une nouvelle div a chaque fois quon fait une animation de couleur sur un element 
+pas pratique!! */
+/* css peu creer des elements d'arriere^plan a notre place
+grace aux pseudo element dont after*/
+
+$border-rad: 2rem;  /* ici on ajoute le fameux pseudo element after*/
+$clr-btn: #15DEA5;
+.btn {
+    border-radius: $border-rad;
+    background-color: $clr-btn;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        & .btn__bg {  /* LA HOVER SE FAIT SUR BTN FAUDRA MODIF VOIR PLUS BAS*/
+            opacity: 1;
+        }
+    }
+        &::after { /* on oublie pas les :: de after*/
+        // attribuez des valeurs de style au pseudo sélecteur ::after ici/* on copie colle les
+        valeur de bg et hop apres on peu effacer bg*/
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: darken($clr-btn, 5);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}/* ca donne: */;
+
+<button class="btn">
+    Survole moi!   /* plus besoin de la div darriere plan*/
+</button>
+
+$border-rad: 2rem;
+$clr-btn: #15DEA5;
+.btn {
+    border-radius: $border-rad;
+    background-color: $clr-btn;
+    position: relative;
+    z-index: 1;
+    &:hover {                                               
+        &::after {  /* ICI ON RAJOUTE AFTER POUR QUE CA FONCTIONNE*/
+            opacity: 1;
+        
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: darken($clr-btn, 5);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+
+
+/* A CE NIVEAU YA UNE COUILLE ,explication */
+/*le navigateur doit dire ce que lelement contient*/
+/*NE JAMAIS OUBLIER CONTENT*/
+
+$border-rad: 2rem;
+$clr-btn: #15DEA5;
+.btn {
+    border-radius: $border-rad;
+    background-color: $clr-btn;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: "";/* on ne veut pas aouter de contenu au bouton alors on met des guillemets et hop*/
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;  
+        left: 0;
+        background-color: darken($clr-btn, 5);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+
+
+/*DEGRADES*/
+$border-rad: 2rem;
+$clr-btn: #15DEA5;
+.btn {
+    border-radius: $border-rad;
+    background-color: $clr-btn;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+    }
+}
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: radial-gradient(circle, lighten($clr-btn, 5) 0%, darken($clr-btn, 10) 100%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+
+/* EXEMPLE DE CODE PEN*/
+
+opacity {
+  margin:300px auto;
+  display: flex;
+  width: 75%;
+  align-items: center !important;
+  justify-content: center !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+
+    .btn {
+      border-radius: 25px;
+      background-color: $mint;
+      font-size: 45px !important;
+      padding: 30px 45px;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      &:hover {
+        border-radius: 25px;
+          &::after {
+            border-radius: 25px;
+              opacity: 1;
+          }
+      }
+      &::after {
+        border-radius: 25px;
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: radial-gradient(circle, lighten($mint, 5) 0%, darken($mint, 10) 100%);
+          opacity: 0;
+          z-index: -1;
+          transition: opacity 250ms;
+      }
+  }
+  }
+
+/*KEYFRAMES*/
+
+
+.btn {
+    &:active {
+        & > .progress__bar {
+            transform: scaleX(1);
+            animation-name: progress-bar;/* on assigne un nom a lelement déclencheur*/
+      animation-duration:  1000ms;/* on met la durée de la transition*/
+
+        }
+
+    }
+}
+
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+/* comme les keyframes ecrasent tt , on peu supprimer transform scale . et
+mettre en une phrase pour + de clarté*/
+.btn {
+    &:active {
+        & > .progress__bar {
+            animation: progress-bar 1000ms;
+        }
+    }
+}
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* ON DECOMPOSE LES KEYFRAMES*/
+
+.btn {
+    &:active {
+        & > .progress__bar {
+            animation: progress-bar 1000ms;
+            opacity: 0;/*on creer une valeur de reference pour lopacité a 0  sinon elle
+            va se remettre automatiquement a 1*/
+        }
+    }
+}
+@keyframes progress-bar {
+    0% {
+        transform: scaleX(0);
+        opacity: .5;/* on regle lopacité a 50% pour la prmeiere phase. */
+    }
+    17% {
+        transform: scaleX(.18);   /* ON A LE POURCENTAGE DE PROGRESSION sur laxe X et la valeur de scale
+        sur laxe Y*/
+    }
+    24% {
+        transform: scaleX(.4);
+    }
+    46%,100% {/* Si je met 100 apres la virgule, cela veut dire que sur 46%     
+        de la barre se sera opaque (1) et cela jusqua 100 pourcent .Sinon les % restants jusqua 100
+        se serait devenu transparent suivant la propriété 1 ere opacity 0.*/
+        transform: scaleX(.81);
+        opacity: 1;/* la ELLE PASSE 46% DE LANIMATION A AUGMENTER L4OPACITE DE  LA BARRE*// 
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+/* on eleve le declencheur active pour que lanimation se declenche a louverture de page
+on asssigne juste le nom de lanimation*/
+
+<html>/* LA BARRE DE PROGRESSUON SE SUFFIT A ELLE MEME*/
+<div class="container">
+    <div class="progress">
+        <div class="progress__bar"></div>
+    </div>
+</div>
+</html>
+
+.progress {
+    &__bar {
+        animation: progress-bar 1000ms;
+    }
+}
+
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+        opacity: .1;
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.4);
+    }
+    46% {
+        transform: scaleX(.81);
+    }
+    85%,100% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* lanimation se lance seule youpi mais le visiteur na pas le tps de la voir commencer 
+on ajoute un animation delay et hop */
+.progress {
+    &__bar {
+        animation: progress-bar 1000ms 150ms;  /* lanim se lancera au bout de 150ms*/
+    }
+}
+
+/* Pour enchainer les animation!!*/ 
+
+<html>
+    <p>Merci pour votre patience</p>
+        <p>Voici votre chat</p>
+</html>
+
+.cat {
+    width: 50vw;
+    height: 30vw;
+    position: absolute;
+    overflow: hidden;
+    background-image: url("https://bit.ly/2XJJLKn");
+    background-size: cover;
+    background-position: -20%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1rem;
+    font-size: 4vw;
+    font-weight: 900;
+    color: white;
+}
+
+@keyframes cat{
+    0% {
+        transform: translateX(-9999px);/* photo du chat deplacé hors de lecran au debut 
+        de lanimation */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}/* on veut que le chat apparaisse des que la barre est totalement chargée
+que la barre soit vide puis se remplisse puis que le miaou aparaisse*/
+
+
+/*on va decoposer et bosser dabord sur la barre de progression*/
+<html>
+    <div class="container">
+        <div class="progress">
+            <div class="progress__bar"></div>
+        </div>
+        <!-- <div class="cat">
+        <p>Merci pour votre patience</p>
+        <p>Voici votre chat</p>
+        </div> -->
+    </div>
+</html>
+
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 1000ms;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+    animation: progress-bar $prog-bar-dur $prog-bar-delay;
+    }
+}
+/*ajouts de backwards ANIMATION FILL MODE */
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 1000ms;/* LA barre reste vide pendant les 1000ms*/
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);/* a la fin revient a scale 5*/
+        animation: progress-bar $prog-bar-dur $prog-bar-delay;
+        animation-fill-mode: backwards;
+    }
+
+
+    /*avec ca ca rend bien*/
+    $prog-bar-dur: 1000ms;
+$prog-bar-delay: 1000ms;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both;
+    }
+}
+
+/*PUIS LE CHAT*/
+
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both;
+    }
+}
+.cat {
+    animation: cat 0ms $cat-delay both;
+}
+/*on veut que lanim chat reste invisible juqua la fin du delai
+*/
+
+/*AJUSTEMENTS*/
+/*la des que la barre est pleine le chat aparait rapidement.
+il nous faut du retard entre la fin de lanimation de la barre et lanim du chat
+il suffit de multiplier la variable cat delay par  2*/
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay*2;/* voila*/
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both;
+    }
+}
+.cat {
+    animation: cat 0ms $cat-delay both;
+}
+/* coté barre animation elle se remplie avec des accoups, on utilise cubic bezier*/
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay*2;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both;
+        animation-timing-function: cubic-bezier(.9,0,.1,1);/*here*/
+    }
+}
+le mieux:
+
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay*2;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both cubic-bezier(.9,0,.1,1);
+    }
+}
+
+$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay*2;
+.progress {
+    &__bar {
+        transform-origin: left;
+        transform: scaleX(0.5);
+        animation: progress-bar $prog-bar-dur $prog-bar-delay both;
+    }
+}
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+        opacity: .1;
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.40);
+        animation-timing-function: cubic-bezier(.9,0,.1,1);/* on ajoute un tf pour fluidifier*/
+    }
+    46% {
+        transform: scaleX(.81);
+    }
+    85%,100% {
+        opacity: 1;
+    }
+        100% {
+        transform: scaleX(1);
+}
+/* on se rend compte qu'au 46 % ya un gros changeemnt de pente au niveaudu graphique c pas encore 
+ca donc on veut aplanir , on change les valeure */
+
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.40);
+        animation-timing-function: cubic-bezier(.9,0,.1,1);
+    }
+    46% {
+        transform: scaleX(.81);
+        animation-timing-function: cubic-bezier(.25,0.25,1);/* voila a ce niveau 
+        sesera moins biscornu*/
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+/*MANIOULER ET REUTLISER LE CSS*/
+/* creation input email*/
+<html>
+    <div class="container">
+        <div class="form">
+            <div class="form__group">
+                <label for="email-input">email</label>
+                    <input type="email" name=”email-input>
+                </div>
+            </div>
+        </div>
+</html>
+AVANT
+$cd-txt: #6300a0;
+$cd-txt--invalid: #fff;
+$cd-danger : #b20a37 ;
+.form {
+    &__group {
+        & input {
+            border: 2px solid $cd-box;
+            border-radius: 100rem;
+            color: $cd-txt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 100%;
+            transition: background-color 500ms;
+            &:focus {
+                border: 2px solid $cd-txt;
+            }
+            &:not(:focus):invalid {
+                background-color: $cd-danger;
+                border: 2px solid $cd-danger;
+                color: $cd-txt--invalid;
+                animation: headshake 100ms cubic-bezier(.4,.1,.6,.9) 3;/*le refus*/
+                animation-iteration-count: 3;/*et on veut le refus 3 fois que jai intégrée 
+                plus haut a ce moment je peux leffacer icic*/
+            }
+        }
+        
+    }
+}
+APRES ON ENELEVE LA TRANSITION POUR....
+un refus de tete!
+
+
+$shake-intensity: 2%;/* on regle le hauchement de tete a 2 %*/
+@keyframes headshake {
+    25% {
+        // entièrement à droite
+        transform: translateX($shake-intensity);
+    }
+    75% {
+        // entièrement à gauche
+        transform: translateX(-$shake-intensity * -1);/* avec -1 position gauche inverse de la
+        droite*/
+    }
+}
+
+CREATION DUN LOADER
+
+
+<div class="container">
+    <div class="load">
+        <div class="load__bar load__bar--1"></div>
+        <div class="load__bar load__bar--2"></div>
+        <div class="load__bar load__bar--3"></div>
+        <div class="load__bar load__bar--4"></div>
+        <div class="load__bar load__bar--5"></div>
+    </div>
+ </div>
+
+
+$cd-bars: #15DEA5;
+$size: 3vh;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / $num-bars; durée de lanim divisée par le nombre de barre
+$num-bars: 5
+
+
+.load {
+    width: $size*10;
+    height: $size*7.5;
+    display: flex;
+    justify-content: space-evenly;
+    &__bar {
+        background-color: #15DEA5;
+        height: 100%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite;/*pour regler le mode d eremplissage
+        et le lire a linfini*/
+        animation duration: normal;
+        animation timing function: ease-in-out;/*regle  le pb cité plus bas*/
+
+        @for $i from 1 through $num-bars {/*BOUCLE SASS FOR*/
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+             }
+        }
+    }
+}
+    }
+
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);/* COMMENCE A 50%*/la barre commence a la moitué de sa taille
+        et prend a hauteur totale en 1 sec;
+        
+    }
+    100% {
+        transform: scaleY(1.0);/* A 100%*/
+    }
+}
+
+.load__bar--1 {
+    animation-delay: 200ms;
+}
+.load__bar--1-inv {  barre du bas inv
+    animation-delay: 200ms;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    background: #0E397F;
+}
+.load__bar--2 {
+    animation-delay: 400ms;
+}
+.load__bar--2-inv {
+    animation-delay: 400ms;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    background: #0E397F;
+}
+.load__bar--3 {
+    animation-delay: 600ms;
+    
+}
+.load__bar--3-inv {
+    animation-delay: 600ms;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    background: #0E397F;
+}
+.load__bar--4 {
+    animation-delay: 800ms;
+}
+.load__bar--4-inv {
+    animation-delay: 800ms;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    background: #0E397F;
+}
+.load__bar--5 {
+    animation-delay: 1000ms;
+}
+.load__bar--5-inv {
+    animation-delay: 1000ms;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+    background: #0E397F;
+}
+}
+quand je met infinite , on revient au pb ou les barres grandissent avant la fin.
+comme si le backward etait annulé .il suffit de rajouter une animation duration .
+
+Apres tout ca on va cheaker le ease in out pour la fluidité. 
+
+
+pour creer 2 ensembles de barres et les animer en miroir: 
+
+<div class="container">
+    <div class="load">
+    <div class="load__bar load__bar--1"></div>
+    <div class="load__bar load__bar--2"></div>
+    <div class="load__bar load__bar--3"></div>
+    <div class="load__bar load__bar--4"></div>
+    <div class="load__bar load__bar--5"></div>
+</div>
+<div class="load">
+    <div class="load__bar load__bar--1-inv"></div>
+    <div class="load__bar load__bar--2-inv"></div>
+    <div class="load__bar load__bar--3-inv"></div>
+    <div class="load__bar load__bar--4-inv"></div>
+    <div class="load__bar load__bar--5-inv"></div>
+    </div>
+</div>
+
+$cd-bars: #15DEA5;
+$cd-bars-inv: #0E397F;
+$size: 3vh;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 5;
+
+.load {
+    &__bar {
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+            &--#{$i}-inv { /* creation dun 2 eme selecteur pour
+                la ligne du bas*/
+                animation-delay: $anim-delay * $i+ random(100)*15ms;/*
+                ici, on cree une animation delay aleatoire pour chaque barre*/
+                animation-direction: alternate-reverse;
+                background-color: $cd-bars-inv;
+                &:hover {
+                    animation-play-state: paused;
+            }
+        }
+    }
+}
+
+animation play state  , la pause
+
+ex dun carré qui tourne.
+<div class="container">
+    <div class="spin"></div>
+</div>
+
+.spin {
+    background-color: #15DEA5;
+    width: 30vh;
+    height: 30vh;
+    animation: spin 3s linear infinite paused;
+    &:hover{ /* besoin dun pseudi selecteur hover pour quelle bouge malgré la pause*/
+        animation-play-state: running;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+EXEMPLE CODE POUR LE MENU DU COUR
+$cd-navy: #0E397F;
+$cd-mint: #15dea5;
+
+@mixin menu__open-accent($dur, $delay) {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f4f9f8;
+    transform-origin: top left;
+    animation: menu $dur $delay both;
+    z-index: -1;
+}
+
+.menu {
+    min-width: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    background:$cd-mint;
+    overflow: hidden;
+    transform-origin: top left;
+    position: relative;
+    animation: menu 661ms both;
+    z-index: -10;
+    &__open-accent--1{
+        @include menu__open-accent(450ms, 275ms);
+    }
+    &__open-accent--2 {
+            @include menu__open-accent(450ms, 150ms);
+            background: $cd-navy;
+            z-index: -2;
+    }
+    &__item {
+        padding: .75rem;
+        margin: .25rem;
+        background: #fff;
+        animation: menu__item 810ms cubic-bezier(.1,.9,.1,1) both;
+        position: relative;
+        &-accent {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: .25rem;
+            background-color: $cd-mint;
+            animation: menu__accent 400ms both;
+            &--active {
+                background-color: $cd-navy
+            }
+        }
+        &--1 {
+            animation-delay: 475ms;
+            > div {
+                animation-delay: 712ms;
+            }
+        }
+        &--2 {
+            animation-delay: 546ms;
+            > div {
+                animation-delay: 805ms;
+            }
+        }
+        &--3 {
+            animation-delay: 632ms;
+            > div {
+                animation-delay: 914ms;
+            }
+        }
+    }
+}
+
+@keyframes menu {
+    0% {
+        transform: scale(0,.07);
+    }
+    33% {
+        transform: scale(1,.07);
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99)
+    }
+
+}
+
+@keyframes menu__item {
+    0% {
+        transform: translateX(-110%);
+    }
+}
+
+@keyframes menu__accent {
+    0% {
+        transform: scaleY(0);
+    }
+}
+
+
+SAAAASSS
+
+.btn {
+  padding: 1.5rem;
+  background: #15DEA5;/*VERT*/
+  cursor: pointer;
+  border-radius: 100rem;
+  font-size: 1.5rem;
+  color: #fff;
+  &--pink {
+    background: #EA526F;/*ROOSE*/
+  }
+  &--outline {
+    background: transparent;
+    border: 2px solid #15DEA5;/*VERT*/
+    color: #15DEA5;
+    &.btn--pink {
+      border: 2px solid #EA526F;/* ROSE*/
+      color: #EA526F;
+    }
+  }
+}
+2 BOUTONS ENCADRES UN VERT ET UN ROSE
+
+MIXIN (a utiliser plutot que les extensions)
+
+@mixin heading-shadow{
+  text-shadow: .55rem .55rem #15DEA5;
+}
+.form {
+  &__heading {
+      @include heading-shadow;
+  }
+}
+
+@mixin heading-shadow($colour){
+  text-shadow: .55rem .55rem $colour;
+}
+
+ici on met un argument color pour modifier header qui
+utilise une autre box shadow.
+
+
+on donne une valeure par defaut a l'argument:
+@mixin heading-shadow($colour: $colour-primary){
+  text-shadow: .55rem .55rem $colour;
+}
+
+
+$heading-shadow-size: 0.55rem;
+@mixin heading-shadow($colour: $colour-primary, $size: $heading-shadow-size){
+  text-shadow: $shadow-size $shadow-size $colour;
+}ici on declare une variable pour declarer une taille dombre qui normalement est
+fixe. on etablit un arguement size et on met un reglage par defaut.
+
+
+
+UTILISATION DE FONCTION
+
+@mixin heading-shadow($colour:$colour-primary, $size: $heading-shadow-size){
+      text-shadow: $size $size darken($colour, 10%);
+}
+(/* version css compilé*/)
+.form__heading {
+text-shadow: 0.55rem 0.55rem #11af82;
+}
+
+
+
+
+
+
+place holders extension( /* a eviter*/)
+
+%typography {
+  color: $colour-primary;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.7;
+}
+h1 {
+@extend %typography;
+}
+textarea {
+  @extend %typography;
+}
+button {
+  @extend %typography;
+}
+input {
+  @extend %typography;
+}
+
+/*UTILISATION DES CONDITIO<NS*/
+@if ( lightness($colour) < 25% ) {
+  $colour: lighten($colour, 10%);
+}
+le pourcentage de luminosité est inférieur à 25 %.
+ Pour obtenir la luminosité de $colour,
+  on utilise la fonction  lightness() de Sass,
+   qui retourne la valeur de luminosité d’une couleur
+
+
+   @if ( lightness($colour) < 25% ) {
+  $colour: lighten($colour, 10%);
+}@else{
+  $colour: darken($colour, 10%);
+}
+/* on enchaine 2 if*/
+@if ( lightness($colour) < 25% ) and ( lightness($colour) > 10% ) {...}
+@if ( lightness($colour) < 25% ) or ( saturation($colour) > 10% ) {...}
+/* avec or nimporte laquelle des conditions est vraie*/
+
+
+LES FONCTIONS
+
+$heading-shadow-size: 0.55rem;
+
+@mixin heading-shadow($colour: $colour-primary, $size: $heading-shadow-size){
+  text-shadow: $shadow-size $shadow-size $colour;
+
+
+
+PAS BIEN
+@mixin heading-shadow($colour: @if ( lightness($colour) < 25% ) {
+      $colour: lighten($colour, 10%);
+  }@else{
+      $colour: darken($colour, 10%);
+  }, $size: $heading-shadow-size){
+  text-shadow: $size $size $colour;
+}
+/*POUR MAITRISER LA LUMINOSIT2 DE LA COULEUR PAR DEFAUT
+ON DOIT MODIFIER LA VALEUR AU SEIN DE LA DECLARATION DE 
+VARIABLE ON DEPLACE IF ELSE DANS LARGUMENT
+la syntaxe ivalise trop confu*/
+
+
+BIIIIIEN
+@function lightness-shift($colour){
+}
+
+Et voilà, il nous manque juste le code ! Copiez la condition, et collez-la entre les accolades :
+
+@function lightness-shift($colour){
+  @if ( lightness($colour) < 25% ) {
+      $colour: lighten($colour, 10%);
+  }@else{
+      $colour: darken($colour, 10%);
+  }
+}
+
+@function lightness-shift($colour){
+  @if ( lightness($colour) < 25% ) {
+      @return lighten($colour, 10%);
+  }@else{
+      @return darken($colour, 10%);
+  }
+}
+/*ON INDIQUE  A LA FONCTION CE QUON VEUT QUELLE RETOURNE*/
+
+
+@mixin heading-shadow($colour: lightness-shift($colour-primary), $size: $heading-shadow-size){
+  color: $colour;
+  text-shadow: $size $size $colour;
+}
+
+/*LA MIXIN EST MAINTENANT BCP PLUS PROPRE*/
