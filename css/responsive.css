@@ -1,0 +1,98 @@
+
+/* new query test*/                                
+
+@media all and (max-width: 1024px){
+
+
+.bloc_page
+{
+ flex-direction: column-reverse;
+}
+
+/*aside responsive*/
+
+.monaside
+{
+ width: 100%;
+}
+
+.asidecontact
+{
+ text-align: center;
+}
+
+.titaside
+{
+ margin-top: 0;
+}
+
+.parafasidemid
+{
+ text-align: center;
+ padding-bottom: 20px;
+}
+
+.parafaside
+
+{
+ padding-bottom: 20px;
+}
+
+.icons
+{
+ padding-bottom: 25px;
+ padding-top: 25px;
+ margin-right: 40px;
+}
+
+.monicone
+{
+	margin-left: 50px;
+}
+
+/*section responsive*/
+
+.letitreprincipal
+{
+ text-align: center;
+}
+
+.titreimage i
+{
+ font-size: 33px;
+}
+
+.blocArticle
+{
+ margin-top: 70px;
+}
+
+.titarticle
+{
+ margin-right: 30px;
+}
+
+.titarticle2
+{
+ margin-right: 30px;
+} 
+
+.ensemble1
+{
+ margin-left: 50px;
+}
+
+.blocrecommand
+{
+ flex-direction: column;
+ text-align: center;
+}
+
+}
+
+
+
+
+
+
+
