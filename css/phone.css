@@ -5,65 +5,64 @@
 
 /*aside responsive*/
 
-.monaside
+aside
 {
- width: 100%;
- }
+  width: 100%;
+}
 
 .parafasidemid
 {
- text-align: center;
- padding-bottom: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }
-.parafaside
 
+.parafaside
 {
- margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .icons
 {
- padding-bottom: 25px;
- padding-top: 5px;
- margin-right: 50px;
-}
-.monicone
-{
-
+  padding-bottom: 25px;
+  padding-top: 5px;
+  margin-right: 50px;
 }
 
 /*section responsive*/
 
 .titreentreprise
 {
- padding-top: 20px;
+  padding-top: 20px;
 }
 
 .datearticle
 {
- width: 70%;
- margin-top: 6px;
- color:rgb(62,60,68);
- font-weight: bold;
- padding-left: 0px;
+  width: 70%;
+  color:rgb(62,60,68);
+  font-weight: bold;
+  padding-left: 0px;
 }
 
 }
 .ensemble1
 {
- flex-direction: column;
- text-align: center;
- margin-left: 95px;
- }
+  flex-direction: column;
+  margin-left: 0px;
+}
 
-.ensemble1 i
+article
 {
-  margin-right: 140px;
+  margin-left: 0px;
 }
 
 .recommand
 {
- margin-right: 40px; 
+  margin-right: 40px; 
 }
  
+ .blocrecommand
+ {
+   display: block;
+ }
+
 }

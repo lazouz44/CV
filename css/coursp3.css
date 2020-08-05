@@ -1281,7 +1281,7 @@ SAAAASSS
   font-size: 1.5rem;
   color: #fff;
   &--pink {
-    background: #EA526F;/*ROOSE*/
+    background: #EA526F;/*ROSE*/
   }
   &--outline {
     background: transparent;
@@ -1438,3 +1438,187 @@ Et voilà, il nous manque juste le code ! Copiez la condition, et collez-la entr
 }
 
 /*LA MIXIN EST MAINTENANT BCP PLUS PROPRE*/
+
+
+
+$white: #fff;
+$pastel-blue: #0097e6;
+$text-color: #192a56;
+
+@function background($text-color) {
+  @if ( $text-color == $white ) {
+      @return $pastel-blue;
+  } @else {
+      @return $white;
+  }
+}
+
+.btn {
+  color: $text-color;
+  background-color: background($text-color);
+}
+La fonction que l’on applique à  background-color  indique que si  $text-color 
+ (la couleur du texte) est égale à ce que contient
+  la variable  $white  (#fff qui est du blanc),
+   alors on retourne la valeur $pastel-blue  (bleu pastel).
+    Ensuite, si la couleur du  texte n’est pas blanche,
+     alors on retourne la valeur  $white  (blanc).
+
+Dans notre cas, la couleur de notre texte 
+n’est pas blanche mais bleu foncé (#192a56),
+ donc la fonction retourne la valeur  $white  (blanc) !
+
+Dans notre CSS, on indique que le résultat
+ de  background($text-colour)  sera la couleur de fond,
+  ici ce sera donc le blanc.
+
+
+  /*les listes*/
+
+  $font-size: 7rem 5rem 4rem 2rem;
+.form{
+  &__field {
+      & label {
+        font-size: nth($font-size, 4);
+      }
+  }
+}
+
+on veut que pour le label soit utilisé que la valeure
+2 rem. on utilise nth(nom de la liste , index= ici 4eme valeure)
+/* on choisi la syntaxe*/
+$syntax-01: 1rem 2rem 3rem 4rem;
+$syntax-02: 1rem, 2rem, 3rem, 4rem;
+$syntax-03: (1rem 2rem 3rem 4rem);
+$syntax-04: (1rem, 2rem, 3rem, 4rem);
+
+/*les maps*/
+$font-size: (logo:7rem, heading:5rem, project-heading:4rem, label:2rem);
+pour chaque valeure un nom
+
+$map: (
+  key-01: value-01,
+  key-02: value-02,
+  key-03: value-03
+);
+/* avec map on doit uniquement uitliser cette syntaxe*/
+
+$font-size: (logo:7rem, heading:5rem, project-heading:4rem, label:2rem);
+.form{
+  &__field {
+    & label {
+        font-size: map-get($font-size, label);
+      }
+  }
+}
+/*avec map get on souhaite label prenne la veleur 2rem*/
+
+$colour-primary: #15DEA5;
+$colour-secondary: #001534;
+$colour-accent: #D6FFF5;
+$colour-white: #fff;
+$colour-invalid: #DB464B;
+
+$txt-input-palette: (
+  active: (
+      bg: $colour-primary,
+      border: $colour-primary,
+      txt: $colour-white,
+  ),
+  focus: (
+      bg: $colour-primary,
+      border: $colour-primary,
+      txt: $colour-white,
+  ),
+  invalid: (
+      bg: $colour-invalid,
+      border: $colour-white,
+      txt: $colour-white,
+  )
+);
+/* creation avec une mixin*/
+
+@mixin txt-input-palette {
+  border: .1rem solid $border;
+  background-color: $bg;
+  color: $txt;
+}
+
+Pour déclarer de quel état (hover, etc.) obtenir les informations,
+ vous devez assigner un argument pour l’état
+  que vous pouvez passer dans la mixin :
+
+@mixin txt-input-palette($state) {
+  border: .1rem solid $border;
+  background-color: $bg;
+  color: $txt;
+}
+
+@mixin txt-input-palette($state) {
+  $palette: map-get($txt-input-palette, $state);
+/*variable palette avec stockage map de palette*/
+  border: .1rem solid $border;
+  background-color: $bg;
+  color: $txt;
+}
+
+@mixin txt-input-palette($state) {
+  $palette: map-get($txt-input-palette, $state);
+  border: .1rem solid map-get($palette, border);
+  background-color: map-get($palette, bg);
+  color: map-get($palette, txt);
+}
+
+
+/*ca donne ca*/
+
+$txt-input-palette: (
+  active: (
+      bg: $colour-primary,
+      border: $colour-primary,
+      txt: $colour-white,
+
+   ),
+  focus: (
+      bg: $colour-primary,
+      border: $colour-primary,
+      txt: $colour-white,
+  ),
+  invalid: (
+      bg: $colour-invalid,
+      border: $colour-white,
+      txt: $colour-white,
+  )
+);
+
+@mixin txt-input-palette($state) {
+  $palette: map-get($txt-input-palette, $state);
+  border: .1rem solid map-get($palette, border);
+  background-color: map-get($palette, bg);
+  color: map-get($palette, txt);
+}
+
+
+/* utilisation d la boucle*/
+
+@mixin txt-input-palette($palettes) {
+  @each $state, $palette in $palettes{
+      border: .1rem solid map-get($palette, border);
+      background-color: map-get($palette, bg);
+      color: map-get($palette, txt);
+  }
+}
+
+@each key value in map
+
+
+/*syntaxe d'interpolation*/
+@mixin txt-input-palette($palettes) {
+  @each $state, $palette in $palettes{
+      &:#{$state}{
+        border: .1rem solid map-get($palette, border);
+        background-color: map-get($palette, bg);
+        color: map-get($palette, txt);
+      }
+  }
+}
