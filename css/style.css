@@ -3,7 +3,6 @@
 /*DEFINITION DE LA POLICE*/
 
 
-
 @font-face {
   font-family: 'robotoregular';
   src: url('../font/Roboto-Regular-webfont.woff');
@@ -193,7 +192,7 @@ h3
   display: flex;
 }
 
-article     
+.article     
 {
   margin-bottom: 20px;
   width: 60%;
@@ -251,7 +250,6 @@ article
 .blocrecommand
 {
   display: flex;
-  
 }
 
 .recommand

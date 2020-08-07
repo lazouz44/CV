@@ -1,5 +1,5 @@
 
-/* new query test*/                                
+/* new query */                                
 
 @media all and (max-width: 1024px){
 
@@ -51,6 +51,16 @@ aside
 }
 
 /*section responsive*/
+
+section
+{
+  padding-right: 6px; 
+}
+
+.article
+{
+	width: 100%;
+}
 
 .letitreprincipal
 {

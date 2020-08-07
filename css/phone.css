@@ -1,5 +1,5 @@
 
-/*new querries petit ecran */                               
+/*new query petit ecran */                               
 
 @media all and (max-width: 600px){  
 
@@ -30,6 +30,11 @@ aside
 
 /*section responsive*/
 
+section
+{
+  padding-right: 6px;
+}
+
 .titreentreprise
 {
   padding-top: 20px;
@@ -43,16 +48,16 @@ aside
   padding-left: 0px;
 }
 
-}
 .ensemble1
 {
   flex-direction: column;
   margin-left: 0px;
 }
 
-article
+.article
 {
   margin-left: 0px;
+  width: 100%;
 }
 
 .recommand
